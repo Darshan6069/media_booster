@@ -6,14 +6,12 @@ import 'package:media_booster/provider.dart';
 import 'package:provider/provider.dart';
 
 class musicPlayScreen extends StatefulWidget {
-  String? musicURL;
-  String? musicName;
-  String? musicImage;
+
   final  currindex;
 
 
 
-  musicPlayScreen({super.key, this.musicURL, this.musicName,this.musicImage, this.currindex});
+  musicPlayScreen({super.key,this.currindex});
 
   @override
   State<musicPlayScreen> createState() => _musicPlayScreenState();
@@ -38,7 +36,7 @@ class _musicPlayScreenState extends State<musicPlayScreen> {
     // TODO: implement initState
     super.initState();
 
-    musicPlayer.open(Audio(widget.musicURL!),
+    musicPlayer.open(Audio(musicList[widget.currindex].videoMusicURL!),
         showNotification: true, autoStart: false);
   }
 
@@ -119,7 +117,7 @@ class _musicPlayScreenState extends State<musicPlayScreen> {
                               ],
                               borderRadius: BorderRadiusDirectional.circular(20),
                               image: DecorationImage(
-                                  image: NetworkImage(widget.musicImage!),fit: BoxFit.cover)
+                                  image: NetworkImage(musicList[widget.currindex].videoMusicImage!),fit: BoxFit.cover)
                               ),
                         ),
                       ),
@@ -127,7 +125,7 @@ class _musicPlayScreenState extends State<musicPlayScreen> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                         child: Text(
-                          widget.musicName!,style: TextStyle(fontSize: 27),
+                          musicList[widget.currindex].videoMusicName!,style: TextStyle(fontSize: 27),
                         ),
                       ),
 
