@@ -48,11 +48,7 @@ class _musicPlayListScreenState extends State<musicPlayListScreen> {
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => musicPlayScreen(
-                                      musicURL: musicList[index].videoMusicURL,
-                                      musicName:
-                                          musicList[index].videoMusicName,
-                                      musicImage:
-                                          musicList[index].videoMusicImage),
+                                      currindex: index),
                                 ));
                               },
                               leading: CircleAvatar(

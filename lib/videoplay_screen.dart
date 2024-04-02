@@ -21,7 +21,7 @@ class _videoPlayScreenState extends State<videoPlayScreen> {
     // TODO: implement initState
     super.initState();
 
-    playerController = VideoPlayerController.networkUrl(Uri.parse(widget.video!));
+    playerController = VideoPlayerController.asset(widget.video!);
     playerController!.initialize();
     chewieController = ChewieController(videoPlayerController: playerController!,
       autoPlay: true,
